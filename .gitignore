@@ -1,0 +1,9 @@
+*.stl
+*.deps
+*.tab
+*.gcode
+*.gif
+*.png
+*.jpg
+*~
+.DS_Store
