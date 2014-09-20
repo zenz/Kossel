@@ -19,13 +19,13 @@ m3HeadHeight        = 3.0;
 m3LooseHeadRadius   = (5.4 + 0.6) / 2;
 m3NutRadius         = (6.25 + 0.75) / 2;
 m3NutHeight         = 4.0;
-bodyWidth           = 38.0; // Along X axis.
-bodyHeight          = 12.0; // Along Z axis.
+bodyWidth           = 44.0; // Along X axis.
+bodyHeight          = 11.0; // Along Z axis.
 straightBodyLength  = 36.0;
 curvedBodyRadius    = bodyWidth/2;
 bodyLength          = straightBodyLength + curvedBodyRadius; // Along Y axis.
 centerYOffset       = bodyLength/2 - curvedBodyRadius;
-rollerXOffset       = 14.0;
+rollerXOffset       = 17.0;
 rollerYOffset       = 18.0;
 rollerYCenter       = centerYOffset + 5.0;
 hiwinYOffset		= 10.0;
@@ -88,19 +88,19 @@ module body()
 		// HIWIN rails.
 		// upper left
 		translate([-hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2,
+				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
 		// upper right
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2,
+				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
 		// lower right
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
@@ -128,12 +128,12 @@ module body()
 	{
 		// Reinforce the area around the third HIWIN M3 hole.
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2,
 				   0])
 		cylinder(r=4.5, h=bodyHeight);
 
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 	}
@@ -143,7 +143,7 @@ module body()
 module m3x25(h, countersunkHead=0)
 {
 	cylinder(r=m3LooseRadius, h=h);
-	translate([0, 0, h - m3HeadHeight - countersunkHead])
+	translate([0, 0, h - m3HeadHeight+1.5 - countersunkHead])
 	cylinder(r=m3LooseHeadRadius, h=m3HeadHeight + countersunkHead);
 }
 
@@ -203,5 +203,4 @@ module roundedBox(size, radius, sidesonly)
 
 
 body();
-
 
