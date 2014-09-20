@@ -19,13 +19,13 @@ m3HeadHeight        = 3.0;
 m3LooseHeadRadius   = (5.4 + 0.6) / 2;
 m3NutRadius         = (6.25 + 0.75) / 2;
 m3NutHeight         = 4.0;
-bodyWidth           = 48.0; // Along X axis.
+bodyWidth           = 44.0; // Along X axis.
 bodyHeight          = 12.0; // Along Z axis.
 straightBodyLength  = 36.0;
 curvedBodyRadius    = bodyWidth/2;
 bodyLength          = straightBodyLength + curvedBodyRadius; // Along Y axis.
 centerYOffset       = bodyLength/2 - curvedBodyRadius;
-rollerXOffset       = 18.0;
+rollerXOffset       = 17.0;
 rollerYOffset       = 18.0;
 rollerYCenter       = centerYOffset + 5.0;
 hiwinYOffset		= 10.0;
@@ -203,5 +203,4 @@ module roundedBox(size, radius, sidesonly)
 
 
 body();
-
 
