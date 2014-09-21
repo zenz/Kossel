@@ -88,19 +88,19 @@ module body()
 		// HIWIN rails.
 		// upper left
 		translate([-hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2.2,
+				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2.3,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
 		// upper right
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2.2,
+				   centerYOffset+hiwinYOffset+hiwinGridSpacing/2+2.3,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
 		// lower right
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.3,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 
@@ -128,12 +128,12 @@ module body()
 	{
 		// Reinforce the area around the third HIWIN M3 hole.
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.3,
 				   0])
 		cylinder(r=4.5, h=bodyHeight);
 
 		translate([hiwinGridSpacing/2,
-				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.2,
+				   centerYOffset+hiwinYOffset-hiwinGridSpacing/2+2.3,
 				   -smidge/2])
 		underM3x25(bodyHeight+smidge);
 	}
