@@ -153,7 +153,7 @@ module underM3x25(h)
 	// This is an M3 screw hole, with room for a nyloc nut on the bottom.
 	cylinder(r=m3LooseRadius, h=0);
 	cylinder(r=m3NutRadius, h=m3NutHeight, $fn=6);
-	translate([0, 0, m3NutHeight + 0.2])
+	translate([0, 0, m3NutHeight + 0.3])
 		cylinder(r=m3LooseRadius, h=h-0.2);
 }
 
