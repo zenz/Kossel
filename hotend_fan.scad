@@ -17,19 +17,38 @@ module hotend_fan() {
 	    			cylinder(r=17,h=groove_height, center=true);
 			translate([0,0,groove_height])
 				cylinder(r=17,h=groove_height, center=true);
-			difference(){
-				translate([0, -18, 0])
-					cylinder(r=21, h=4);
-				translate([21, -57.5, 10]) rotate([0,90,90])
-					cube([12,42,40]);
-				translate([24.9, -29, -1])
-					cube([9.8,40,40], center=true);
-				translate([-24.9, -29, -1])
-					cube([9.8,40,40], center=true);
-			}
+			// half round
+			//difference(){
+			//	translate([0, -18, 0])
+			//		cylinder(r=21, h=4);
+			//	translate([21, -57.5, 10]) rotate([0,90,90])
+			//		cube([12,42,40]);
+			//	translate([24.9, -29, -1])
+			//		cube([9.8,40,40], center=true);
+			//	translate([-24.9, -29, -1])
+			//		cube([9.8,40,40], center=true);
+			//}
 			// fan mount
 			difference(){
-				rotate([fan_angel,0,0]) {
+				rotate([fan_angel,0,90]) {
+					difference(){
+  						translate([0, - fan_offset, 12])
+    						cube([40, 5, 22], center=true);
+						translate([0, - fan_offset, 35])
+							rotate([90, 0, 0,]) cylinder(r=19, h=20, center=true);
+						// fan mount screw
+						translate([0, 10- fan_offset, 15])
+						for (x = [-16, 16]) {
+        						translate([x, -fan_offset, 4]) rotate([90, 0, 0]) #
+          						cylinder(r=m3_radius, h=16, center=true, $fn=12);
+    						}
+					}
+				}
+				translate([0, 0, -groove_height-0.4])
+				cube([100,100,10], center=true);
+			}
+			difference(){
+				rotate([fan_angel,0,-90]) {
 					difference(){
   						translate([0, - fan_offset, 12])
     						cube([40, 5, 22], center=true);
@@ -85,7 +104,13 @@ module hotend_fan() {
 	translate([7.5,4.5,50]) rotate([0,180,90]) scale(3) % jhead(center=true);
 
   	// 40mm fan.
-  	rotate([fan_angel,0,0]) {
+  	rotate([fan_angel,0,90]) {
+  		translate([0, -7 - fan_offset, 35]) % difference() {
+    		cube([40, 10, 40], center=true);
+    		rotate([90, 0, 0,]) cylinder(r=19, h=20, center=true);
+  		}
+	}
+	rotate([fan_angel,0,-90]) {
   		translate([0, -7 - fan_offset, 35]) % difference() {
     		cube([40, 10, 40], center=true);
     		rotate([90, 0, 0,]) cylinder(r=19, h=20, center=true);

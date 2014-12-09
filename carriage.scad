@@ -88,12 +88,12 @@ module carriage()
 					{
 						union()
 						{
-							translate([-0.5 - clearance * 2, y, horn_thickness / 2 + 1])
-								cube([1, 14, horn_thickness - 2], center = true);
-							translate([-1 - clearance * 2, y, horn_thickness / 2 + 1])
-								cube([2, 12, horn_thickness - 2], center = true);
+							translate([-1.25 - clearance * 2, y, horn_thickness / 2 +1])
+								cube([2.5, 14, horn_thickness - 2], center = true);
+							translate([-2 - clearance * 2, y, horn_thickness / 2 + 1])
+								cube([3, 12, horn_thickness - 2], center = true);
 							for (n = [-6, 6])
-								translate([-1 - clearance * 2, y + n, horn_thickness / 2 + 1])
+								translate([-2.5 - clearance * 2, y + n, horn_thickness / 2 + 1])
 									cylinder(r = 1, h = horn_thickness - 2, center = true, $fn = 16);
 
 							translate([3.25 - clearance, y, horn_thickness / 2 + 1])
