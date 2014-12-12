@@ -6,7 +6,7 @@ module microswitch() {
     union() {
       translate([0, 0, 2.5])
         cube([19.8, 6, 10], center=true);
-      translate([3, 0.5, 6])
+      translate([2.5, 0.5, 6])
         cube([2, 3.5, 5], center=true);
       for (x = [-8, -1, 8]) {
         translate([x, 0, 0])

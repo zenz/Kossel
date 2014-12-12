@@ -4,7 +4,7 @@ use <microswitch.scad>;
 
 height = 26;
 height2 = 26;
-tunnel = 2.4;
+tunnel = 2.8;
 face_offset = 4;
 
 module foot() {
@@ -68,7 +68,7 @@ module retractable() {
       cube([30, 20, 2*height], center=true);
     }
     // Sub-miniature micro switch.
-    translate([-3, -face_offset-3, 5]) {
+    translate([-2.5, -face_offset-3, 5]) {
       % microswitch();
       for (x = [-9.5/2, 9.5/2]) {
         translate([x, 0, 0]) rotate([90, 0, 0])
