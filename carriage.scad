@@ -129,7 +129,8 @@ module carriage()
 				// avoid touching diagonal push rods (carbon tube)
 				translate([20, -20, 12.5])
 					rotate([35, 35, 30])
-						cube([40, 40, 20], center = true);
+						cube([40, 40, 20], center = true);	
+		
 			}
 
 		}
@@ -162,10 +163,22 @@ module carriage()
 				}
 			}
 		}
+		// screw hole for adjustment
+		translate([0, 20, 2.9])
+			rotate([90, 0, 0])
+				cylinder(r = m3_wide_radius - 0.1, h = 10, $fn= 16);	
 
+		// screw nut hole for adjustment
+		translate([0, 16, 2.9])
+			rotate([90, 0, 0])
+				cylinder(r1 = m3_nut_radius, r2= m3_nut_radius, h = 2.5, center = true, $fn = 6);
 
+		translate([0, 16, -0.5])
+			cube([m3_nut_radius * 2, 2.5 , m3_nut_radius*2], center = true);
 	}
+	
 
 }
+
 
 carriage();

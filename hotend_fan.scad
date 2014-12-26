@@ -76,7 +76,28 @@ module hotend_fan() {
 			translate([-8.7,11,groove_height/2])
 				cylinder(r=3, h=16, center=true, $fn=12);
 		}
-
+		
+		// 风扇固定部分，切掉4个角
+		rotate([0,45,90]) {
+			translate([18, -17.5, 18]) difference(){
+				cube([20,10,20], center=true);
+			}
+		}
+		rotate([0,45,90]) {
+			translate([18, 17.5, 18]) difference(){
+				cube([20,10,20], center=true);
+			}
+		}
+		rotate([0,45,90]) {
+			translate([-18, -17.5, -18]) difference(){
+				cube([20,10,20], center=true);
+			}
+		}
+		rotate([0,45,90]) {
+			translate([-18, 17.5, -18]) difference(){
+				cube([20,10,20], center=true);
+			}
+		}
     	// Groove mount insert slot.
     	translate([0, 10, 0])
       		cube([2*groove_radius, 20, 20], center=true);
